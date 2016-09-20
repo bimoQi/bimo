@@ -1,0 +1,2 @@
+# bimo
+self blog
