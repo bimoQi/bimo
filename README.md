@@ -1,2 +1,2 @@
 # bimo
-self blog
+Personal blog
