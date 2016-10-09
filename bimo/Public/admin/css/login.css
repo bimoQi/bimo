@@ -1,0 +1,76 @@
+@CHARSET "UTF-8";
+body{
+	width:100%;
+	height:100%;
+	padding:0;
+	margin:0;
+	background:url(../img/login6.jpg) no-repeat ;
+	background-size:100%;
+	overflow:hidden;
+}
+.box{
+	margin:11% auto auto auto;
+	padding:0;
+	width:485px;
+	height:313px;
+	background:url(../img/login.png) no-repeat 0 0;
+}
+.bg{
+	width:485px;
+	height:313px;
+	background:#3C3903;
+	opacity:0.1;
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=10);
+}
+.login{
+	position:relative;
+	width:100%;
+	height:120px;
+	margin-top:-121px;
+
+}
+.text{
+	float:left;
+	width:50%;
+	height:100%;
+}
+.text .text-sub{
+	width:100%;
+	height:30px;
+	margin:10px 25px;
+}
+.text span{
+	float:left;
+	font-size:20px;
+	color:#fff;
+	font-weight:900;
+	font-family:微软雅黑;
+	text-shadow:2px 2px 10px #aaa;
+	width:85px;
+	line-height:23px;
+}
+.text input{
+	float:left;
+	background-color:transparent;
+	border-radius:5px;
+	border:2px solid #fff;
+	height:20px;
+	width:140px;
+	padding-left:10px;
+	color:#E5031A;
+	font-weight:bolder;
+	border-radius: 5px;
+}
+#login_submit{
+	float:left;
+	width:150px;
+	height:37px;
+	margin:25px auto auto 40px;
+	cursor:pointer;
+	opacity:1;
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+}
+#login_submit:hover{
+	opacity:0.8;
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=80);
+}

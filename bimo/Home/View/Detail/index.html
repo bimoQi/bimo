@@ -1,0 +1,143 @@
+<extend name="Public/base"/>
+<block name="title">详细内容 | 笔墨横姿，几令读者心目俱眩，一个别致的网站！</block>
+<block name="main">
+<!-- 引入prettify插件 代码高亮 -->
+<css href="__PUBLIC__/mycss/prettify/prettify.css"/>
+<js href="__PUBLIC__/js/prettify/prettify.js"/>
+<css href="__PUBLIC__/mycss/detail.css"/>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-8">
+			<div id="detail">
+				<div class="contanier-fluid padding-none">
+					<div class="head">{$arr.title}</div>
+					<div class="line"><span class="glyphicon glyphicon-user"></span> {$arr.author} &nbsp;&nbsp;<span class="glyphicon glyphicon-time"></span> {$arr.posttime|date="Y-m-d H:i:s",###}  &nbsp;<span class="glyphicon glyphicon-eye-open"></span>（<font color="#000"><b>{$arr.viewnum}</b></font>）<span class="glyphicon glyphicon-comment"></span>（<font color="#000"><b>{$com_count}</b></font>）</div>
+					<div class="content">{$arr.content}</div>
+				</div>
+			</div>
+			<div class="change">
+				<div class="container-fluid padding-none">
+					<div class="col-xs-6 article-toggle">
+						<php>if($pre_data["title"]){</php>
+						<a href="__ROOT__/Detail/index/id/{$pre_data.id}.html">
+							<p>&lt;上一篇</p>
+							<p>{$pre_data.title|my_substr=0,20}</p>
+						</a>
+						<php>}else{</php>
+						<a>
+							<p style="padding:12px">没有文章了！</p>
+						</a>	
+						<php>}</php>
+					</div>
+					<div class="col-xs-6 article-toggle">
+						<php>if($next_data["title"]){</php>
+						<a href="__ROOT__/Detail/index/id/{$next_data.id}.html">
+							<p>下一篇&gt;</p>		
+							<p>{$next_data.title|my_substr=0,20}</p>
+						</a>
+						<php>}else{</php>
+						<a>
+							<p style="padding:12px">没有文章了！</p>
+						</a>	
+						<php>}</php>
+					</div>
+				</div>
+			</div>
+			<!-- 评论区 -->
+			<div class="comment">
+				<div class="container-fluid padding-none">
+					<div class="com-title"><span class="glyphicon glyphicon-comment" style="color:green"></span> 评论区</div>
+					<foreach name="comment" item="comm">
+					<div class="container-fluid">
+						<div class="media">
+							<div class="peo-head pull-left">
+								<img src="{$comm.headpic}"/>
+							</div>
+							<div class="media-body">
+								<h5 class="media-heading">
+									<input type="hidden" value="{$comm.id}"/>
+									<div class="figure">{$comm.nickname}</div>
+									<div class="time">{$comm.posttime|date="Y-m-d",###}
+									</div>
+									<span><em class="text-success" style="color:#333;text-shadow:1px 1px 3px #aaa;font-weight:100;">{$key+1}#</em>&nbsp;<a href="javascript:;" class="reply">回复</a></span>
+								</h5>
+								<div class="peo-cont">
+									<p>{$comm.content|smile}</p>
+								</div>
+								<php>
+									if($comm['reply']){
+										for($j=0; $j < count($comm['reply']); $j++){
+								</php>
+								<div class="media reply-media">
+									<div class="peo-head pull-left">
+										<img src="{$comm['reply'][$j].headpic}"/>
+									</div>
+									<div class="media-body">
+										<h5 class="media-heading">
+											<div class="figure">{$comm['reply'][$j].nickname}</div>
+											<div class="time">{$comm['reply'][$j].posttime|date="Y-m-d ",###}
+											</div>
+										</h5>
+										<div class="peo-cont">
+											<p>{$comm['reply'][$j].content|smile}</p>
+										</div>
+									</div>
+								</div>
+								<php>}}</php>
+							</div>
+						</div>
+					</div>
+					</foreach>
+				</div>
+			</div>
+
+			<!-- 发表评论  -->
+			<div  id="post_comment" class="post-comment">
+				<div class="container-fluid padding-none">
+					<div class="post-title"><span class="glyphicon glyphicon-edit" style="color:green"></span> 发表评论</div>
+					<form name="form" class="form-horizontal" role="form" method="post">
+						<div class="form-group">
+							<div class="col-xs-10 col-sm-6" style="padding-left:37px">
+								<input class="nickname form-control" placeholder="昵称" style="padding-left:30px" type="text" name="nickname"/>
+							</div>
+							<span class="col-xs-2 col-sm-6 control-label nickname-info text-left"></span>
+						</div>
+						<div class="form-group">
+							<div class="col-xs-10 col-sm-6" style="padding-left:37px">
+								<input class="email form-control" placeholder="邮箱" style="padding-left:30px" type="text" name="email"/>
+							</div>
+							<span class="col-xs-2 col-sm-6 control-label email-info text-left"></span>
+						</div>
+						<div class="form-group">
+							<div class="col-xs-10 col-sm-6" style="padding-left:37px">
+								<input class="website form-control" placeholder="网址（可不填）" style="padding-left:30px" type="text" name="website"/>
+							</div>
+							<span class="col-xs-2 col-sm-6 control-label website-info text-left"></span>
+						</div>
+						<div class="form-group">
+							<div class="col-xs-12" style="padding:0 37px;">
+								<textarea name="content" class="content form-control" placeholder="填写评论" id="content"></textarea>
+							</div>
+						</div>
+						<div class="form-group">
+							<input type="hidden" class="articleid" name="articleid" value="{$arr.id}"/>
+							<input type="hidden" class="replyid" name="replyid">
+							<div class="col-xs-10 col-sm-6" style="padding-left:37px">
+								<button type="button" id="submit" class="btn btn-success btn-block" name="submit">提交</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- 加载博主推荐栏目  -->
+		<include file="Public/recommend"/>
+	</div>
+</div>
+<js href="__PUBLIC__/js/detail.js"/>
+<script>
+// 高亮
+prettyPrint();
+</script>
+</block>

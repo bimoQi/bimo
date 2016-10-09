@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>发表微语</title>
+<link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css">
+<css href="__PUBLIC__/admin/css/public.css"/>
+<css href="__PUBLIC__/admin/css/speak.css"/>
+<js href="__PUBLIC__/js/ckeditor/ckeditor.js"/>
+</head>
+<body>
+<h4>发表微语</h4>
+<div class="add">
+	<a href="__ROOT__/Admin/Speak/index"><button type="button" class="btn btn-sm btn-info my-btn">返回</button></a>
+</div>
+<form class="list" name="myform" action="__ROOT__/Admin/Speak/do_add_speak" enctype='multipart/form-data' method="post" role="form">
+	<div class="form-group">
+	      <label for="title" class="control-label" style="font-size:15px">发表内容：</label>
+	         <textarea name="myEditor" id="myEditor" ></textarea>
+  	</div>
+  	<div class="form-group">
+			<button  type="submit" name="submit" id="submit" class="btn  btn-primary m-submit">发布</button>
+	</div>
+	<span style="color:red;">{$error}</span>
+</form>	
+
+<div class="add">
+	<a href="__ROOT__/Admin/Speak/index"><button type="button" class="btn btn-sm btn-info my-btn">返回</button></a>
+</div>
+<script type="text/javascript">
+CKEDITOR.replace( 'myEditor',
+{
+
+});
+</script>
+</body>
+</html>

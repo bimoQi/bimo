@@ -1,0 +1,68 @@
+<css href="__PUBLIC__/css/bootstrap.min.css"/>
+<css href="__PUBLIC__/mycss/header.css"/>
+<script src="__PUBLIC__/js/jquery.min.js"></script>
+<script src="__PUBLIC__/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/js/snow.js"></script>
+<div class="y-nav">
+	<div class="y-width">
+		<div class="y-nav-left">
+			<a href="__ROOT__/">笔墨</a>
+		</div>
+		<div class="y-nav-right">
+		</div>
+	</div>
+</div>
+<header id="header" class="container-fluid">
+	<div class="container">
+	<div class="row">
+		<div class="col-md-3 col-sm-3 col-xs-3">
+			<img class="img-responsive" src="__PUBLIC__/img/title1.png">
+		</div>
+		<div class="col-md-9 col-sm-9 col-xs-9 m-form">
+			<form role="form" action="__ROOT__/Search/index" method="post">
+				<div class="col-sm-8 m-search">
+					<div class="input-group my-col-xs-input" style="margin-top:10px">
+						<input name="search" class="form-control" type="text"  placeholder="搜索" autocomplete="off" x-webkit-speech lang="zh-CN" x-webkit-grammar="bUIltin:search"/>
+						<span class="input-group-btn">
+							<button type="submit" class="btn btn-primary">搜索</button>
+						</span>
+					</div>
+				</div>
+				<div class="col-sm-4 hidden-xs">
+					<img id="url" class="img-responsive" src="__PUBLIC__/img/url.png"/>
+				</div>
+			</form>
+		</div>
+	</div>
+	</div>
+</header>
+<nav id="nav" class="navbar navbar-default" role="navigation">
+	<div class="container">
+		<div class="row">
+			<div class="navbar-header visible-xs">
+				<a href="#" class="navbar-brand"><strong>导航栏</strong></a>
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynav">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="collapse navbar-collapse" id="mynav">
+				<ul class="nav navbar-nav">
+					<li><a href="__ROOT__/"><span class="glyphicon glyphicon-home nav-icon"></span>主页</a></li>
+					<li><a href="__ROOT__/Article"><span class="glyphicon glyphicon-list-alt nav-icon"></span>文章</a></li>
+					<li><a href="__ROOT__/Tag"><span class="glyphicon glyphicon-tags nav-icon"></span>标签</a></li>
+					<li><a href="__ROOT__/Album"><span class="glyphicon glyphicon-picture nav-icon"></span>相册</a></li>
+					<li><a href="__ROOT__/Speak"><span class="glyphicon glyphicon-book nav-icon"></span>微语</a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-link nav-icon"></span>链接</a></li>
+					<li><a href="__ROOT__/Guestbook"><span class="glyphicon glyphicon-comment nav-icon"></span>留言</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</nav>
+<!-- top按钮 -->
+<div id="top-button"></div>
+<js href="__PUBLIC__/js/header.js" />
+
+

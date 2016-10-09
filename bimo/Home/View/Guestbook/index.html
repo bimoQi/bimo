@@ -1,0 +1,161 @@
+<extend name="Public/base"/>
+<block name="title">留言板 | 笔墨横姿，几令读者心目俱眩，一个别致的网站！</block>
+<block name="main">
+<css href="__PUBLIC__/mycss/guestbook.css"/>
+<div class="container">
+	<div class="main">
+		<h3>留言板（<span style="color:#ff9500">共{$page_data.count}个</span>）</h3>
+		<div class="container-fluid padding-none post">
+			<foreach name="post" item="arr">
+				<div class="post-sub col-xs-6 col-sm-4 col-md-3">
+					<a href="{$arr.website}" target="_back" class="post-figure">
+						<img class="img-responsive" src="{$arr.headpic}" alt="头像">
+						<div class="post-nickname">{$arr.nickname}</div>
+						<div class="num">{$arr.num}</div>
+					</a>
+				</div>
+			</foreach>
+		</div>
+		<div class="container-fluid" style="padding:10px 23px">
+			<div class="alert alert-info">
+				<span class="glyphicon glyphicon-info-sign"></span>
+				此博客借鉴各个网站的元素，好看的都拿来模仿。<br/><br/>
+				<span class="glyphicon glyphicon-info-sign"></span>
+				谢谢大家访问，留言互动！
+			</div>
+		</div>
+	</div>
+	<!-- 评论区 -->
+	<div class="comment">
+		<div class="container-fluid padding-none">
+			<div class="com-title"><span class="glyphicon glyphicon-comment" style="color:green"></span> 评论区</div>
+			<foreach name="comment" item="comm">
+			<div class="container-fluid">
+				<div class="media">
+					<div class="peo-head pull-left">
+						<img src="{$comm.headpic}"/>
+					</div>
+					<div class="media-body">
+						<h5 class="media-heading">
+							<input type="hidden" value="{$comm.id}"/>
+							<div class="figure">{$comm.nickname}</div>
+							<div class="time">{$comm.posttime|date="Y-m-d",###}
+							</div>
+							<span><em class="text-success" style="color:#333;text-shadow:1px 1px 3px #aaa;font-weight:100;">{$key+1}#</em>&nbsp;<a href="javascript:;" class="reply">回复</a></span>
+						</h5>
+						<div class="peo-cont">
+							<p>{$comm.content|smile}</p>
+						</div>
+						<php>
+							if($comm['reply']){
+								for($j=0; $j < count($comm['reply']); $j++){
+						</php>
+						<div class="media reply-media">
+							<div class="peo-head pull-left">
+								<img src="{$comm['reply'][$j].headpic}"/>
+							</div>
+							<div class="media-body">
+								<h5 class="media-heading">
+									<div class="figure">{$comm['reply'][$j].nickname}</div>
+									<div class="time">{$comm['reply'][$j].posttime|date="Y-m-d ",###}
+									</div>
+								</h5>
+								<div class="peo-cont">
+									<p>{$comm['reply'][$j].content|smile}</p>
+								</div>
+							</div>
+						</div>
+						<php>}}</php>
+					</div>
+				</div>
+			</div>
+			</foreach>
+		</div>
+	</div>
+	<!-- 分页 -->
+	<div class="container" style="text-align:center">
+		<div id="page" class="m-page hidden-xs">
+		  <ul>
+		    {$show}
+		  </ul>
+		  <p>共&nbsp;{$page_data.count}&nbsp;条记录&nbsp;&nbsp;<php>echo $_GET['p']?$_GET['p']:1;</php>/{$page_data.page_total}页</p>
+		</div>
+		<div class="visible-xs">
+			<div class="container" style="text-align:center;margin-bottom:10px">
+				<a id="prev"  class="btn btn-xs btn-primary pull-left">上一页</a>
+				<em>共&nbsp;{$page_data.count}&nbsp;条记录&nbsp;&nbsp;<php>echo $_GET['p']?$_GET['p']:1;</php>/<i>{$page_data.page_total}</i>页</em>
+				<a id="next" href="#" class="btn btn-xs btn-primary pull-right">下一页</a>
+			</div>
+		</div>
+		<script>
+				var url = location.href;
+				var num = url.indexOf("/p/");
+				if(num>0){
+					var url_head = url.substring(0,num+3);
+					var str1 = url.substring(num+3);
+					var str2 = str1.substring(0,str1.indexOf("."));
+					var prev_page = parseInt(str2)-1;
+					var next_page = parseInt(str2)+1;
+					var prev = url_head+""+prev_page+".html";
+					var next = url_head+""+next_page+".html";
+					if(prev_page <= 0){
+						$("#prev").remove();
+					}
+					if(next_page-1 >= parseInt($("em i").html())){
+						$("#next").remove();
+					}
+					$("#prev").attr("href",prev);
+					$("#next").attr("href",next);
+				}else{
+					$("#prev").remove();
+					var num = url.indexOf("/Guestbook");
+					var next = url.substring(0,num)+'/Guestbook/index/p/2.html';
+					$("#next").attr("href",next);
+					if(1 == parseInt($("em i").html())){
+						$("#next").remove();
+					}
+				}
+			</script>
+	</div>
+	<!-- 发表评论  -->
+	<div  id="post_comment" class="post-comment">
+		<div class="container-fluid padding-none">
+			<div class="post-title"><span class="glyphicon glyphicon-edit" style="color:green"></span> 发表评论</div>
+			<form name="form" class="form-horizontal" role="form" method="post">
+				<div class="form-group">
+					<div class="col-xs-10 col-sm-6" style="padding-left:37px">
+						<input class="nickname form-control" placeholder="昵称" style="padding-left:30px" type="text" name="nickname"/>
+					</div>
+					<span class="col-xs-2 col-sm-6 control-label nickname-info text-left"></span>
+				</div>
+				<div class="form-group">
+					<div class="col-xs-10 col-sm-6" style="padding-left:37px">
+						<input class="email form-control" placeholder="邮箱" style="padding-left:30px" type="text" name="email"/>
+					</div>
+					<span class="col-xs-2 col-sm-6 control-label email-info text-left"></span>
+				</div>
+				<div class="form-group">
+					<div class="col-xs-10 col-sm-6" style="padding-left:37px">
+						<input class="website form-control" placeholder="网址（可不填）" style="padding-left:30px" type="text" name="website"/>
+					</div>
+					<span class="col-xs-2 col-sm-6 control-label website-info text-left"></span>
+				</div>
+				<div class="form-group">
+					<div class="col-xs-12" style="padding:0 37px;">
+						<textarea name="content" class="content form-control" placeholder="填写评论" id="content"></textarea>
+					</div>
+				</div>
+				<div class="form-group">
+					<input type="hidden" class="articleid" name="articleid" value="{$arr.id}"/>
+					<input type="hidden" class="replyid" name="replyid">
+					<div class="col-xs-10 col-sm-6" style="padding-left:37px">
+						<button type="button" id="submit" class="btn btn-success btn-block" name="submit">提交</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<js href="__PUBLIC__/js/guestbook.js"/>
+
+</block>

@@ -1,0 +1,47 @@
+		{:C('SHOW_PAGE_TRACE',true)}<!-- 每次加载页面都显示 页面trace -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css">
+<css href="__PUBLIC__/admin/css/public.css"/>
+<css href="__PUBLIC__/admin/css/add_photo.css"/>
+</head>
+<body>
+<h4>上传图片：</h4>
+<div class="add">
+	<a href="__ROOT__/Admin/Album/index"><button type="button" class="btn btn-sm btn-info my-btn">返回</button></a>
+</div>
+<form action="{:U('Album/upload')}"  enctype="multipart/form-data" method="post">
+	<div class="group">
+	    <label for="album">选择相册*：</label>
+	    <select id="album" name="album">
+	   	<foreach name="album_arr" item="album_arr">
+	    		<php>if($album_arr['name'] == $info["album_data"]){</php>
+	    		<option value="{$info['album_data']}" selected>{$info['album_data']}</option>
+	    		<php>}else{</php>
+	      		<option value="{$album_arr['name']}">{$album_arr['name']}</option>
+	      		<php>}</php>
+	    </foreach>
+	  
+	    </select>
+	</div>
+	<div class="group">
+		<label for="photo">选择图片*：</label>
+	    <input type="file" id="photo" name="photo" />
+	</div>
+	<div class="group">
+		<label for="describe">图片描述*：</label>
+	    <input type="text" id="describe" name="describe" />
+	</div>
+	<div class="group">
+		<button type="submit" class="btn btn-sm sub-btn">上传</button>	
+	</div>
+</form>
+<div class="info">{$info["success"]}<br/>{$error}</div>
+
+<div class="add margin-top">
+	<a href="__ROOT__/Admin/Album/index"><button type="button" class="btn btn-sm btn-info my-btn">返回</button></a>
+</div>
+</body>
+</html>

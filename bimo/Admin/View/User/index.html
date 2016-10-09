@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css">
+<css href="__PUBLIC__/admin/css/public.css"/>
+<script src="__PUBLIC__/js/jquery.min.js"></script>
+<script src="__PUBLIC__/admin/js/public.js"></script>
+</head>
+<body>
+<h4>用户列表：</h4>
+<div class="add">
+	<a href="#"><button type="button" class="btn btn-sm btn-info my-btn">添加用户</button></a>
+</div>
+<div class="list">
+	<table>
+	<tr class="t-head">
+		<td>编号</td>
+		<td>名称</td>
+		<td>头像</td>
+		<td>角色</td>
+		<td>邮箱</td>
+		<td>用户组标示</td>
+		<td>操作</td>
+	</tr>
+	<foreach name="list" item="arr">
+	<tr class="t-body">
+		<td>{$arr['id']}</td>
+		<td>{$arr['name']}</td>
+		<td><img src="{$arr['head']}" style="width:80px;height:80px"/></td>
+		<td>{$arr['role']}</td>
+		<td>{$arr['email']}</td>
+		<td><img class="head-pic" src="{$arr['ident']}"></td>
+		<td>
+         	<a href="#"><span title="编辑" class="glyphicon glyphicon-edit" style="color:#222"></span></a>
+         	<a title="{$arr.id}" class="del"><span title="删除" class="glyphicon glyphicon-trash" style="color:#222"></span></a>
+         </td>
+	</tr>
+	</foreach>
+	</table>
+</div>
+<div class="add">
+	<a href="#"><button type="button" class="btn btn-sm btn-info my-btn">添加用户</button></a>
+</div>
+</body>
+</html>

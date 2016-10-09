@@ -1,0 +1,34 @@
+<extend name="Public/base"/>
+<block name="title">相册 | 笔墨横姿，几令读者心目俱眩，一个别致的网站！</block>
+<block name="main">
+<css href="__PUBLIC__/mycss/album.css"/>
+<js href="__PUBLIC__/js/album.js"/>
+	<div class="container">
+		<div class="album">
+			<h3>相册专辑</h3>
+			<div class="container-fluid padding-none">
+			<foreach name="alibum_arr" item="alibum_arr">
+				<div class="m-group">
+					<dl>
+						<dt>
+							<a href="__ROOT__/Album/photo/id/{$alibum_arr['id']}.html">
+								<php>if($alibum_arr['imgpath']){</php>
+								<img src="{$alibum_arr['imgpath']}"/>
+								<php>}else{</php>
+								<img src="__PUBLIC__/img/no_pic.png"/>
+								<php>}</php>
+							</a>
+						</dt>
+						<dd class="title"><a href="#">{$alibum_arr["name"]}</a></dd>
+						<dd class="detail">{$alibum_arr["photonum"]}张照片</dd>
+						<dd class="chuli">
+							<div class="chuli-sub"><img class="ding" alt="{$alibum_arr['id']}" src="__PUBLIC__/img/ding_no.png"/><span>{$alibum_arr["dingnum"]}</span></div>
+							<div class="chuli-sub"><img class="cai" alt="{$alibum_arr['id']}" src="__PUBLIC__/img/cai_no.png"/><span>{$alibum_arr["cainum"]}</span></div>
+						</dd>
+					</dl>
+				</div>
+			</foreach>
+			</div>
+		</div>
+	</div>
+</block>

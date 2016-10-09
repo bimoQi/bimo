@@ -1,0 +1,6 @@
+[23-Sep-2016 18:51:20 PRC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\webroot\www\bimo\Runtime\common~runtime.php on line 1
+[24-Sep-2016 19:49:32 PRC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in C:\webroot\www\bimo\Runtime\common~runtime.php on line 1
+[28-Sep-2016 19:48:04 PRC] PHP Fatal error:  Call to a member function display() on null in C:\webroot\www\bimo\Public\ThinkPHP\Library\Think\Controller.class.php on line 56
+[28-Sep-2016 19:53:37 PRC] PHP Fatal error:  Call to a member function display() on null in C:\webroot\www\bimo\Public\ThinkPHP\Library\Think\Controller.class.php on line 56
+[28-Sep-2016 19:54:47 PRC] PHP Fatal error:  Call to a member function display() on null in C:\webroot\www\bimo\Public\ThinkPHP\Library\Think\Controller.class.php on line 56
+[28-Sep-2016 19:54:57 PRC] PHP Fatal error:  Call to a member function display() on null in C:\webroot\www\bimo\Public\ThinkPHP\Library\Think\Controller.class.php on line 56

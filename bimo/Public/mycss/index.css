@@ -1,0 +1,412 @@
+﻿@CHARSET "UTF-8";
+/* 轮播图*/
+h4,dd,dl,p{
+	overflow:hidden;
+}
+.slide div{
+	padding:0;
+}
+#sub2 {
+	top:-600px;
+}
+#sub3 {
+	top:-600px;
+}
+#content{
+	border:1px solid #ddd;
+	margin:10px auto;
+}
+#content a{
+	color:#167F39;
+	text-decoration:none;
+}
+#content_left img{
+	display:none;
+}
+#content_left img.active{
+	display:block;
+}
+#content_left .banner{
+	width:100%;
+	height:100%;
+}
+#content_left .shadow{
+	position:relative;
+	z-index:1;
+	float:left;
+	width:100%;
+	height:30px;
+	background:#000;
+	margin-top:-30px;
+	opacity:0.7;
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+}
+#content_left .shadow span.title{
+	float:left;
+	height:25px;
+	line-height:25px;
+	margin:1px auto auto 20px;
+	color:#fff;
+	display:none;	
+	font-weight:bolder;
+	font-size:12px;
+}
+#content_left .shadow span.dot{
+	float:right;
+	width:15px;
+	height:15px;
+	border-radius:50%;
+	background:#ccc;
+	margin:8px 5px auto 3px;
+	display:block;	
+}
+#content_left .shadow span.dot-active{
+	background:#F0A771;
+}
+#content_left .shadow span.active{display:block;}
+#content_right,
+#content_right .news{
+	padding:0;
+}
+.news dl dd{
+	font-size:12px;
+	border-bottom:1px dashed #B7BCC1;
+	height:25px;
+	line-height:25px;
+	margin:10px auto 20px 0px;
+	padding-left:20px;
+	background:url(../img/blink.png) no-repeat 0 5px;
+	color:#29CB55;
+	text-overflow:ellipsis;
+}
+.news dl dd a:hover{color:#ff9500;text-decoration:none;}
+.figure-picture{
+	margin-top:16px;
+}
+.figure img:hover{
+	opacity:0.6;
+	filter:Alpha(opacity=60);
+}
+.describe {padding:0;}
+.describe a{
+	color:#5FBE5F;
+}
+.describe a:hover{
+	color:#ff9500;
+	text-decoration:none;
+}
+.describe dt{
+	text-align:center;
+	font-size:13px;
+}
+.describe dd{
+	font-size:11px;
+	color:#888;
+	text-overflow:ellipsis;
+} 
+
+#con-sub1{
+	width:1100px;
+	margin:20px auto;
+	clear:both;
+	height:350px;
+}
+#con-sub2{
+	width:1100px;
+	margin:auto;
+	clear:both;
+	height:350px;
+}
+/* 技术区 */
+#life,#technology{
+	float:left;
+	border:1px solid #C4C4FA;
+	font-size:12px;
+	margin:17px auto;
+	padding:0;
+}
+.area-title{
+    float: left;
+    width: 120px;
+    /* height: 90px; */
+    line-height: 70px;
+    font-size: 18px;
+    color: #fff;
+    font-weight: bolder;
+    padding: 0 0 0 30px;
+    background: url(../img/floor_blue.png) no-repeat 0px -0px;
+    margin: -21px auto auto -107px;
+}
+ .head{
+	margin:0 auto auto 80px;
+	height:40px;
+	width:auto;
+	padding:0 -2px;	
+}
+.head a{
+	width:55px;
+	height:40px;
+	float:right;
+	color:#67C39C;
+	font-weight:bolder;
+	line-height:29px;
+	padding-left:20px;
+}
+ .head a:hover{
+	text-decoration:none;
+	cursor:pointer;
+}
+.sub{
+	height:30px;
+	line-height:30px;
+	display:block;
+	margin:0;
+	font-size:12px;
+	color:#fff;
+	font-weight:bolder;
+	text-align:center;
+	cursor:pointer;
+	padding:0;
+}
+ .detail{
+	width:100%;
+	display:block;
+}
+.img{
+	margin-top:10px;
+}
+.img-sub {
+	width:134px;
+	height:120px;
+	display:inline-block;
+	border:1px solid transparent;
+}
+.detail .img div span{
+	position:relative;
+	float:left;
+	margin-left:0;
+	width:130px;
+	height:25px;
+	line-height:25px;
+	background:#999;
+	margin:1px 1px -31px 1px;
+	opacity:0.9;
+	color:#fff;
+	text-align:center;
+	font-size:12px;
+	font-weight:300;
+	text-overflow: ellipsis;
+   	overflow: hidden;
+   	white-space: nowrap;
+}
+.detail .img div img{
+	float:left;
+	width:130px;
+	height:116px;
+	cursor:pointer;
+	margin:1px 2px 2px 1px;
+}
+.img a:hover{cursor:pointer;text-decoration:none;}
+.detail .techno-caption{
+	width:100%;
+	height:150px;
+
+}
+.detail .area-caption dl{
+	width:100%;
+	height:100%;
+}
+.detail .area-caption dd{
+	height:30px;
+	line-height:30px;
+	float:left;
+	margin:5px 5px 0px 20px;
+	font-size:12px;
+	border-bottom:1px dashed #B7BCC1;
+	padding:0;
+}
+.detail .area-caption dd a{color:#167F39;}
+.detail .area-caption dd a:hover{text-decoration:none;color:#ff9500}
+/* 时事热点 */
+#hotsport{
+	border:1px solid #C4C4FA;
+	font-size:12px;
+	margin-top:17px;
+}
+#hotsport h4{
+	font-size:14px;
+	font-weight:bolder;
+	color:#fff;
+	height:30px;
+	line-height:30px;
+	margin:0 0 8px 0;
+	padding-top:5px;  
+	padding:0 0 0 15px;
+	background:#000;
+}
+#hotsport dd{
+	height:27px;
+	margin:3px 0 2px 0;
+	padding-left:30px;
+	color:#C20A0A;
+}
+#hotsport dd.hot1{background:url(../img/hot1.png) no-repeat 4px 0;}
+#hotsport dd.hot2{background:url(../img/hot2.png) no-repeat 4px 0;}
+#hotsport dd.hot3{background:url(../img/hot3.png) no-repeat 4px 0;}
+#hotsport dd.hot4{background:url(../img/hot4.png) no-repeat 4px 0;}
+#hotsport dd.hot5{background:url(../img/hot5.png) no-repeat 4px 0;}
+#hotsport dd.hot6{background:url(../img/hot6.png) no-repeat 4px 0;}
+#hotsport dd.hot7{background:url(../img/hot7.png) no-repeat 4px 0;}
+#hotsport dd a{color:#167F39;}
+#hotsport dd a:hover{color:#167F39;text-decoration:none;color:#ff9500}
+#hotsport dd span{
+	text-align:center;
+	width:45px;
+	float:right;
+	margin:auto;
+}
+#hotsport .hot-detail{
+	letter-spacing:2px;/*字体之间的空隙*/	
+	height:84px;
+	display:none;
+}
+/* 图片过渡 */
+#hotsport div{
+	width:100px;
+	height:80px;
+	float:left;
+	overflow:hidden;
+}
+#hotsport div img{
+	width:100px;
+	height:80px;transition:.4s;	
+}
+#hotsport div img:hover{
+	width:110px;
+	height:90px;
+	margin:-6px auto auto -6px;
+}
+#hotsport h5{
+	width:180px;
+	height:80px;
+	float:left;
+	color:#888;
+	padding:0;
+	margin:0 0 0 10px;
+	font-size:11px;
+}
+/* 最新评论 */
+#new-comment{
+	height:340px;
+	margin:17px auto 10px 0;
+	border:1px solid #C4C4FA;
+	font-size:12px;
+}
+#new-comment h4{
+	font-size:14px;
+	font-weight:bolder;
+	color:#fff;
+	height:30px;
+	line-height:30px;
+	margin:0 0 8px 0;
+	padding-top:5px;  
+	padding:0 0 0 15px;
+	background:#000;
+}
+#new-comment img{
+	width:40px;
+	height:40px;
+	float:left;
+	margin:auto 2px;
+	cursor:pointer;
+}
+#new-comment dl{
+	float:left;
+	height:60px;
+	float:left;
+	padding-left:10px;
+	margin:0 auto;
+	font-size:13px;
+}
+#new-comment dl a{color:#D95725;font-weight:900;}
+#new-comment dl a:hover{color:#ff9500;text-decoration:none;}
+
+#new-comment .comment-user{
+	height:30%;
+	background:url(../img/comment_header.png) no-repeat 0 2;
+}
+#new-comment .comment-content{
+	height:70%;
+	width:90%;
+	font-size:12px;
+	color:#888;
+	letter-spacing:1px;
+	margin:5px auto;
+}
+
+/* 媒体查询 */
+/* 苹果5 */
+@media (min-width:310px ) { 
+	.img {
+		padding:0;
+	}
+	.detail .img div img {
+		width:115px;
+	}
+	.detail .img div span {
+		width:115px;
+	}
+	.img-sub {
+		width:120px;
+	}
+}
+@media (min-width: 768px) {
+	.news dl dd {
+		margin: 3px auto;
+	}
+	.describe dt{
+		margin:0;
+	}
+	.describe dd {
+		    height: 54px;
+		margin: 0;
+	}
+}
+@media (min-width: 992px) {
+	.news dl dd {
+		margin: 2px auto 13px auto;
+	}
+	.describe dt{
+		margin:1px auto;
+	}
+	.describe dd {
+		    height: 64px;
+		margin: 0;
+	}
+	.detail {
+	height:310px;
+	}
+	#new-comment,#hotsport{
+		height:372px;
+	}
+	#hotsport h5 {
+    	width: 150px;
+	}
+@media (min-width: 1200px) {
+	.news dl dd {
+		margin: 13px auto 18px auto;
+	}
+	.describe dt{
+		margin:9px auto;
+	}
+	.describe dd {
+		    height: 80px;
+		margin: 0;
+	}
+	.detail {
+	height:310px;
+	}
+	#new-comment,#hotsport{
+		height:372px;
+	}
+}

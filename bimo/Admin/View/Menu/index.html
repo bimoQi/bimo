@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<META http-equiv="Expires" content="Mon, 26 Jul 1997 05:00:00 GMT">
+	<META http-equiv="Last-Modified" content="Sat, 10 Nov 1997 09:08:07 GMT">
+	<META http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+	<META http-equiv="Pragma" content="no-cache">
+	<title>后台管理</title>
+	<script src="__PUBLIC__/js/jquery.min.js"></script>
+	<script src="__PUBLIC__/admin/js/index.js"></script>
+	<link rel="stylesheet" href="__PUBLIC__/admin/css/index.css"/>
+</head>
+<body>
+<div id="header">
+	<h1>后台管理系统</h1>
+	<div class="head-info">
+		<span class="admin"><a href="#">{$admin_name}</a></span>
+		<span class="logout"><a href="{:U('Public/logout')}">退出</a></span>
+		<span id="time"></span>
+	</div>
+</div>
+<div id="menu">
+	<dl>
+		<dt><div>普通管理</div></dt>
+		<dd><a href="__ROOT__/Admin/Article/show_article" target="content">文章管理</a></dd>
+		<dd><a href="__ROOT__/Admin/Comment/show_comment" target="content">评论管理</a></dd>
+		<dd><a href="__ROOT__/Admin/User/index" target="content">用户管理</a></dd>
+		<dd><a href="__ROOT__/Admin/Album/index" target="content">相册管理</a></dd>
+		<dd><a href="__ROOT__/Admin/Speak/index" target="content">微语管理</a></dd>
+	</dl>
+	<dl>
+		<dt><div>系统管理</div></dt>
+		<dd><a href="__ROOT__/Admin/Info/index" target="content">系统信息</a></dd>
+		<dd><a href="" target="content">系统设置</a></dd>
+		<dd><a href="__ROOT__/Admin/Self/index" target="content">个人设置</a></dd>
+	</dl>
+</div>
+<div id="maincontent">
+	<iframe src="__ROOT__/Admin/Article/show_article"  name="content" marginheight="0" marginwidth="0" frameborder="0"  height="100%" width="100%"></iframe>
+</div>
+</body>
+</html>

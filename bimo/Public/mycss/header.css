@@ -1,0 +1,221 @@
+html,body,form,dl,dd {padding:0;margin:0;}
+html{
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+body{
+	width:100%;	
+	height:100%;	
+  	margin:0;
+  	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background:url(../img/backx.png) repeat center top;
+	background-attachment:fixed;
+	min-width:320px;
+}
+.glyphicon{
+	top:2px;
+}
+#header{
+	background:url(../img/head_bg.jpg) repeat ;
+	padding-top:30px;
+}
+.navbar {
+	border-radius:0;
+}
+.navbar-default .navbar-toggle {
+	border-color: #2a9a90;
+}
+.navbar-toggle .icon-bar {
+	background-color:#2d576b;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #8DC7B2;
+}
+.m-search {
+	padding-left:0;
+}
+.m-search input {
+	background: transparent;
+}
+.m-search button {
+	padding-left:20px;
+	padding-right:20px;
+}
+#url{
+	height:60px;
+	margin-left:-10px;
+}
+/* 重写导航栏高度 */
+.navbar-nav>li>a {
+padding-top: 8px;
+padding-bottom: 8px;
+}
+.navbar-brand {
+height: 30px;
+padding-top: 8px;
+}
+.navbar {
+min-height: 40px;
+}
+.navbar-toggle {
+margin-top: 4px;
+margin-bottom: 4px;
+padding:6px 10px;
+}
+/* 媒体查询 */
+/* 针对苹果5 */
+@media (max-width: 330px) {
+	.m-form{
+		padding-top:0px;
+	}
+	.m-search {
+   		margin-top: -10px;
+	}
+}
+@media (max-width:767px) {
+	.m-url{
+		padding:0;
+	}
+	.m-form{
+		padding-top:6px;
+	}
+	.my-col-xs-input > .form-control,
+	.my-col-xs-input > .input-group-btn > .btn {
+	  height: 30px;
+	  padding: 5px 10px;
+	  font-size: 12px;
+	  line-height: 1.5;
+	  border-radius: 3px;
+	}
+}
+@media (min-width:768px) {
+	.m-form{
+		padding-top:20px;
+	}
+	#url{
+		margin-left:0;
+	}
+	.nav>li>a {
+		padding-left:20px;
+		padding-right:20px;
+	}
+}
+@media (min-width:992px) {
+	#url{
+		margin-left:0;
+	}
+	.nav>li>a {
+		padding-left:30px;
+		padding-right:30px;
+	}
+}
+@media (min-width:1200px) {
+	#url{
+		margin-left:15px;
+	}
+}
+.y-nav {
+	width:100%;
+	position:fixed;
+	z-index:12;
+	top:0;
+	background:#fff;
+	opacity:0.4;
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=40);
+}
+.y-nav a:hover{
+	color:#ff9500;
+}
+.y-nav-wrapper {
+	height:40px;
+	line-height:40px;  
+}
+.y-nav-left {
+	width:280px;
+	float:left;
+	font-size:22px;
+	font-weight:bolder;
+}
+.y-nav-left a {text-decoration:none; color:#167F39;font-weight:bolder;}
+.y-width {width:990px; margin:0 auto;}
+#nav{
+	background:#67C39C;
+	margin-bottom:0px;
+}
+#nav ul li:hover{
+	background-color:#5AB38E;
+}
+#nav a{
+	display:block;
+	text-decoration:none; color:#FFF;
+}
+#nav a:hover{
+	cursor:pointer;
+}
+.nav-icon {
+	margin-right:3px;
+}
+/* top按钮 */
+#top-button{
+	position:fixed;
+	top:70%;
+	left:88%;
+	width:44px;
+	height:48px;
+	background:url(../img/top_button.png);
+	border-radius:5px;
+	cursor:pointer;
+	z-index:100;
+}
+/*分页*/
+.con-sub{
+	width:100%;
+	margin:10px auto;
+	text-align:center;
+}
+.m-page{
+	display:inline-block;
+	height:30px;
+	line-height:30px;
+	margin:10px auto;
+}
+.m-page p{
+	float:right;
+	color:#666;
+}
+.m-page ul{
+	float:right;
+}
+.m-page ul li{
+	list-style-type :none;
+	display:block;
+	float:left;
+	width:30px;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	margin:auto 7px;
+	border:1px solid #ccc;
+	border-radius:5px;	
+}
+.m-page ul li.active{background-color:#3B8DD1;}
+.m-page ul li.active a{color:#fff;}
+.m-page ul li a:hover{text-decoration:none}
+.m-page ul li a:visited {text-decoration:none}  /* 已访问的链接 */
+.m-page ul li.pre{
+	width:60px;
+}
+.m-page ul li a{
+	color:#2F889A;
+	display:block;
+}
+/*文本超过区域 自动加...*/
+.text-overflow {
+	white-space:nowrap; 
+	text-overflow:ellipsis;
+}
+.padding-none{padding:0;}
+/* css3删选 */
+::-moz-selection {color: #fff; color: rgba(255, 255, 255, 0.85); background: #ea4c89;}
+::selection {color: #fff; color: rgba(255, 255, 255, 0.85); background: #ea4c89;}
+::-webkit-selection {color: #fff; color: rgba(255, 255, 255, 0.85); background: #ea4c89;}

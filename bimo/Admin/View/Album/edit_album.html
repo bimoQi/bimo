@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css">
+<css href="__PUBLIC__/admin/css/public.css"/>
+<css href="__PUBLIC__/admin/css/edit_album.css"/>
+<script src="__PUBLIC__/js/jquery.min.js"></script>
+<script src="__PUBLIC__/admin/js/edit_album.js"></script>
+<script src="__PUBLIC__/admin/js/public.js"></script>
+</head>
+<body>
+<h4>编辑相册：</h4>
+<div class="add">
+	<a href="__ROOT__/Admin/Album/index"><button type="button" class="btn btn-sm btn-info my-btn">返回</button></a>
+</div>
+<div class="list">
+	<table>
+		<tr class="album-name">
+			<td>相册名称：</td>
+			<td>{$album_name}</td>
+		</tr>
+		<tr class="t-head">
+			<td>图片缩略图</td>
+			<td>图片名称</td>
+			<td>图片描述</td>
+			<td>图片路径</td>
+			<td>图片大小</td>
+			<td>上传时间</td>
+			<td>操作</td>
+		</tr>
+		<foreach name="list" item="list">
+		<tr class="t-body">
+			<td style="padding:5px;"><img class="small-photo" src="{$list['imgpath']}"/></td>
+			<td>{$list["name"]}</td>
+			<td>{$list["describe"]}</td>
+			<td>{$list["imgpath"]}</td>
+			<td>{$list["imgsize"]}</td>
+			<td>{$list["posttime"]|date="Y-m-d H:i:s",###}</td>
+			<td>	
+	         	<a title="{$list['id']}" class="del"><span title="删除" class="glyphicon glyphicon-trash" style="background-size:30px;color:#222"></span></a>
+         	</td>
+		</tr>
+		</foreach>
+	</table>
+	<div class="con-sub">
+		<div id="page" class="m-page">
+			<ul>
+				{$show}
+			</ul>
+		  	<p>共&nbsp;{$page_data.count}&nbsp;条记录&nbsp;&nbsp;<php>echo $_GET['p']?$_GET['p']:1;</php>/{$page_data.page_total}页</p>
+		</div>
+	</div>
+</div>
+
+<div class="add margin-top">
+	<a href="__ROOT__/Admin/Album/index"><button type="button" class="btn btn-sm btn-info my-btn">返回</button></a>
+</div>
+</body>
+</html>

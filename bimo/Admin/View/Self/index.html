@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>个人设置</title>
+<link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css">
+<css href="__PUBLIC__/admin/css/public.css"/>
+<css href="__PUBLIC__/admin/css/self.css"/>
+</head>
+<body>
+<h4>个人信息</h4>
+<div class="add"></div>
+<div class="list">
+	<form action="{:U('Self/modif')}" method="post">
+	<table>
+		<tr class="t-head">
+			<td>属性</td>
+			<td>信息</td>
+		</tr>
+		<tr class="t-body">
+			<td>序号</td>
+			<td>{$admin_info['id']}<input type="hidden" name="id" value="{$admin_info['id']}"></td>
+		</tr>
+		<tr class="t-body">
+			<td>姓名</td>
+			<td><input type="text" name="name" value="{$admin_info['name']}" class="form-control m-input"/></td>
+		</tr>
+		<tr class="t-body">
+			<td>个人头像</td>
+			<td><img src="{$admin_info['head']}" style="width:80px;height:80px"/></td>
+		</tr>
+		<tr class="t-body">
+			<td>角色</td>
+			<td>{$admin_info['role']}</td>
+		</tr>
+		<tr class="t-body">
+			<td>密码</td>
+			<td><input type="password" name="password" class="form-control m-input"/></td>
+		</tr>
+		<tr class="t-body">
+			<td>邮箱</td>
+			<td><input type="text" name="email" class="form-control m-input" value="{$admin_info['email']}"/></td>
+		</tr>
+		<tr class="t-body">
+			<td>用户组标识</td>
+			<td><img style="width:25px; height:25px;" src="{$admin_info['ident']}"/></td>
+		</tr>
+		<tr class="t-body">
+			<td></td><td><button type="submit" class="btn btn-info">修改</button></td>
+		</tr>
+	</table>
+	</form>
+</div>
+
+<div class="add"></div>
+</body>
+</html>

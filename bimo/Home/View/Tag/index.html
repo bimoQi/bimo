@@ -1,0 +1,22 @@
+<extend name="Public/base"/>
+<block name="title">标签 | 笔墨横姿，几令读者心目俱眩，一个别致的网站！</block>
+<block name="main">
+<css href="__PUBLIC__/mycss/tag.css"/>
+<js href="__PUBLIC__/js/tag.js"/>
+<div class="container">
+	<div class="row">
+		<div class="col-md-8">
+			<div id="tag">
+			<h4><span class="glyphicon glyphicon-tags" style="font-size:20px;"></span>&nbsp;&nbsp;标签Tag</h4>
+			<foreach name="tag" item="tags">
+			<div class="sub-tag">
+				<a href="__ROOT__/Search/index/info/{$tags['tagname']}">{$tags["tagname"]}</a>
+			</div>
+			</foreach>
+			</div>
+		</div>
+		<!-- 加载博主推荐栏目  -->
+		<include file="Public/recommend"/>
+	</div>
+</div>
+</block>

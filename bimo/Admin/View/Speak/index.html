@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>微语管理</title>
+<link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css">
+<css href="__PUBLIC__/admin/css/public.css"/>
+<js href="__PUBLIC__/js/jquery.min.js"/>
+<js href="__PUBLIC__/admin/js/speak.js"/>
+</head>
+<body>
+<h4>微语</h4>
+<div class="add"><a href="__ROOT__/Admin/Speak/add_speak"><button type="button" class="btn btn-sm btn-info my-btn">发表微语</button></a></div>
+<div class="list">
+	<table>
+	    <tr class="t-head">
+	         <th style="width:50px">编号</th>
+	         <th style="width:700px">内容</th>
+	         <th>顶数</th>
+	         <th>踩数</th>
+	         <th>发表时间</th>
+	         <th style="width:80px">操作</th>
+	    </tr>
+	   	<foreach name="list" item="arr" key="k">
+	    <tr class="t-body">
+	         <td>{$arr.id}</td>
+	         <td>{$arr.content}</td>
+	         <td>{$arr.dingnum}</td>
+	         <td>{$arr.cainum}</td>
+	         <td>{$arr.posttime|date="Y-m-d H:i:s",###}</td>
+	         <td>
+	         	<a title="{$arr.id}" class="del"><span title="删除" class="glyphicon glyphicon-trash" style="color:#222"></span></a>
+	         </td>
+	    </tr>
+	      </foreach>
+	</table>
+</div>
+<div class="con-sub">
+	<div id="page" class="m-page">
+		<ul>
+			{$show}
+		</ul>
+		 	<p>共&nbsp;{$page_data.count}&nbsp;条记录&nbsp;&nbsp;<php>echo $_GET['p']?$_GET['p']:1;</php>/{$page_data.page_total}页</p>
+	</div>
+</div>
+
+<div class="add"><a href="__ROOT__/Admin/Speak/add_speak"><button type="button" class="btn btn-sm btn-info my-btn">发表微语</button></a></div>
+</body>
+</html>

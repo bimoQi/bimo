@@ -1,0 +1,35 @@
+.slideshow {
+  position: relative;
+  z-index: 1;
+}
+.slideshow * {
+  outline: none;
+}
+.slideshow .slider-track {
+  -webkit-transition: all 1s cubic-bezier(0.7, 0, 0.3, 1);
+  transition: all 1s cubic-bezier(0.7, 0, 0.3, 1);
+}
+.slideshow .item {
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+.slideshow .item img {
+  width: 100%;
+  -webkit-transition: all 1s cubic-bezier(0.7, 0, 0.3, 1);
+  transition: all 1s cubic-bezier(0.7, 0, 0.3, 1);
+  -webkit-transform: scale(1.2);
+		  transform: scale(1.2);
+}
+.slideshow .item.slick-active img {
+  -webkit-transform: scale(1);
+		  transform: scale(1);
+}
+
+/* 重写 */
+.slick-dotted.slick-slider {
+	margin-bottom: 0;
+}
+.slick-dots li {
+	margin-bottom:30px;
+}

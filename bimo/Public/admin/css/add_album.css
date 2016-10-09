@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+form{
+	display:block;
+	width:96%;
+	margin:10px auto auto auto;
+	height:40px;
+}
+form input{
+	height:30px;
+	line-height:30px;
+	border-radius:5px;
+	border:1px solid #ccc;
+}

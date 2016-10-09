@@ -1,0 +1,80 @@
+		{:C('SHOW_PAGE_TRACE',true)}<!-- 每次加载页面都显示 页面trace -->
+<!DOCTYPE html>
+<html>
+<head>
+   <title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<css href="__PUBLIC__/css/bootstrap.min.css"/>
+	<css href="__PUBLIC__/admin/css/public.css"/>
+	<css href="__PUBLIC__/admin/css/show_comment.css"/>
+	<script src="__PUBLIC__/js/jquery.min.js"></script>
+	<script src="__PUBLIC__/js/bootstrap.min.js"></script>
+	<script src="__PUBLIC__/admin/js/public.js"></script>
+	<script src="__PUBLIC__/admin/js/show_comment.js"></script>
+<style>
+</style>
+</head>
+<body>
+<h4>评论列表：</h4>
+<div class="add"></div>
+<div class="list">
+	<table>
+	    <tr class="t-head">
+	         <th style="min-width:100px">昵称</th>
+	         <th>所属文章</th>
+	         <th>头像</th>
+	         <th>邮箱</th>
+	         <th>网址</th>
+	         <th style="width:200px">内容</th>
+	         <th>是否通过</th>
+	         <th>评论时间</th>
+	         <th>回复量</th>
+	         <th style="width:100px">操作</th>
+	    </tr>
+	   	<foreach name="list" item="arr" key="k">
+	    <tr class="t-body">
+	         <td class="color-red">{$arr.nickname}</td>
+	         <td title="{$arr.article}">{$arr.article|my_substr=0,10}</td>
+	         <td><img class="head-pic" src="{$arr.headpic}"/></td>
+	         <td>{$arr.email}</td>
+	         <td>{$arr.website}</td>
+	         <td title="{$arr.content}">{$arr.content|my_substr=0,18|smile}</td>
+	         <td>{$arr.tongguo}</td>
+	         <td>{$arr.posttime|date="Y-m-d H:i:s",###}</td>
+	         <td><php>echo count($arr['reply']);</php></td>      
+	         <td>
+	         	<a title="查看回复" onclick="view_reply({$arr[id]})" class="reply"><span class="glyphicon glyphicon-eye-open" style="color:#222"></span></a>
+	         	<a title="{$arr.id}"  class="del"><span title="删除" class="glyphicon glyphicon-trash" style="color:#222"></span></a>
+	         </td>
+	    </tr>
+	      </foreach>
+	</table>
+	<!-- 查看评论 -->
+	<div class="r-reply"></div>
+	<div class="r-box">
+			<div class="head">查看回复<span title="关闭" class="glyphicon glyphicon-off m-close"></span></div>
+			<table>
+				<tr class="t-head padding10">
+			         <th style="min-width:100px">昵称</th>
+			         <th>头像</th>
+			         <th>邮箱</th>
+			         <th style="width:200px" title="{$arr.content}">内容</th>
+			         <th>评论时间</th>
+			         <th>操作</th>
+			    </tr>
+			</table>
+	</div>
+	<!-- 查看评论结束 -->
+</div>
+<div class="con-sub">
+	<div id="page" class="m-page">
+		<ul>
+			{$show}
+		</ul>
+		 	<p>共&nbsp;{$page_data.count}&nbsp;条记录&nbsp;&nbsp;<php>echo $_GET['p']?$_GET['p']:1;</php>/{$page_data.page_total}页</p>
+	</div>
+</div>
+
+<div class="add margin-top"></div>
+</body>
+</html>

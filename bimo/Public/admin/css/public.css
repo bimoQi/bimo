@@ -1,0 +1,141 @@
+@CHARSET "UTF-8";
+@font-face{
+	font-family:清茶楷体;
+	src:url('../../fonts/清茶楷体.ttf');
+}
+@font-face{
+	font-family:腾祥细潮圆简;
+	src:url('../fonts/腾祥细潮圆简.ttf');
+}
+body { font:12px Arial, Verdana, Helvetica, sans-serif;}
+html, body {width:100%; height:100%;overflow:auto;}
+h4{
+	width : 96%;
+	margin : 10px auto auto auto;
+	font-weight:bolder;
+	font-size:15px;
+}
+/* 提示按钮 */
+.add{
+	width:96%;
+	margin:10px auto auto auto;
+	height:43px;
+	background:#D3E3F5;
+	border-bottom:1px solid #ddd;
+}
+.add .my-btn{
+	margin:5px auto auto 10px;
+	background:#fefefe;
+	color:#52A2F7;
+	font-weight:900;
+	border-radius:5px;
+}
+.add .my-btn:hover{
+	background:#52A2F7;
+	color:#fff;
+}
+.margin-top{
+	margin-top:10px;
+}
+/* 表格 */
+.list{
+	width:96%;
+	margin:5px auto auto auto;
+}
+.list table{
+	width:100%;
+}
+.list table .t-head{
+	background:#F2F4F6;
+	color:#7D7D7D;
+	font-size:13px;
+	min-height:30px;
+	line-height:30px;
+	border-bottom:1px solid #DBD1D6;
+}
+.list table .t-body{
+	font-size:13px;
+	min-height:25px;
+	line-height:25px;
+}
+.list table .t-body td{
+	height:35px;
+	border-bottom:1px solid #DBD1D6;
+}
+.list table .t-body td img{
+	width:30px;
+	height:30px;
+}
+.list table .t-body:hover{
+	background:#DFE8F6;
+}
+.list table a{
+	cursor:pointer;
+}
+.list td a span{
+	font-size:17px;
+}
+table .color-red{
+	color : #28B134;
+}
+/* 表单 */
+form .sub-btn{
+	margin:auto auto 2px 10px;
+	background:#2E2E2E;
+	font-weight:900;
+	border-radius:5px;
+	color:#fff;
+}
+form .sub-btn:hover{
+	background:#222;
+	color:#fff;
+}
+/*分页*/
+.con-sub{
+	width:96%;
+	margin:10px auto auto auto;
+	text-align:center;
+}
+.m-page{
+	display:inline-block;
+	height:30px;
+	line-height:30px;
+	margin:10px auto;
+}
+.m-page p{
+	float:right;
+	color:#666;
+}
+.m-page ul{
+	float:right;
+}
+.m-page ul li{
+	list-style-type :none;
+	display:block;
+	float:left;
+	width:30px;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	margin:auto 7px;
+	border:1px solid #ccc;
+	border-radius:5px;	
+}
+.m-page ul li{ transition-duration: .4s;}
+.m-page ul li.active{background-color:#3B8DD1;}
+.m-page ul li.active a{color:#fff;}
+.m-page ul li a:hover{text-decoration:none;transition-duration: .4s;}
+.m-page ul li a:visited {text-decoration:none}  /* 已访问的链接 */
+.m-page ul li.pre{
+	width:60px;
+}
+.m-page ul li a{
+	color:#2F889A;
+	display:block;
+}
+/* 返回提示信息 */
+.info{
+	width:96%;
+	margin:10px auto auto auto;
+	color:red;
+}

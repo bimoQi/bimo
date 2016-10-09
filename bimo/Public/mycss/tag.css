@@ -1,0 +1,42 @@
+@CHARSET "UTF-8";
+#tag{
+	min-height:400px;
+	margin:25px auto 20px 0;
+	border:1px solid #C4C4FA;
+	border-top:2px solid #67C39C;	
+	font-family:黑体;	
+}
+#tag h4{
+	display:block;
+	font-weight:900;
+	color:#EA4B86;
+	font-size:25px;
+	font-family:楷体;
+	text-shadow:5px 5px 5px #aaa;
+	padding-left:20px;
+}
+#tag .sub-tag{
+	float:left;
+	height:30px;
+	background:url(../img/tag_blur.fw.png) no-repeat;
+	line-height:33px;
+	margin:10px 0 10px 10px;	
+}
+#tag .sub-tag:hover{
+	background:url(../img/tag_focus.fw.png) no-repeat;
+}
+#tag .sub-tag a{
+	display:block;
+	width:100%;
+	height:100%;
+	color:#fff;	
+	font-weight:bold;
+	padding-left:25px;	
+	padding-right:6px;
+	font-size:15px;
+	border:0px;
+}
+#tag .sub-tag a:hover{
+	text-decoration:none;
+	color:3232DF;
+}

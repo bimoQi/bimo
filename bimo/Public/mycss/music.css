@@ -1,0 +1,257 @@
+/* 部件 侧栏音乐 */
+#music{
+	width:370px;
+	height:180px;
+	position:fixed;	
+	bottom:40px;
+	left:0;
+	background-color:#36936C;
+	z-index:100;
+	opacity:0.8;
+	border-radius:0 6px 6px 0;
+	box-shadow:2px 1px 10px #111;
+}
+#music .player{
+	width:100%;height:100%;
+}
+.player .info{
+	position:absolute;
+	top: 15px;
+    left: 10px;
+    color: #fff;
+	width:97%;
+}
+.player .info dd{
+	line-height:25px;
+	height:28px;
+}
+.info .float-left{
+	float:left;
+}
+.info .float-right{
+	float:right;
+	margin-right:10px;
+}
+.info i{
+    font-size: 12px;
+    margin-right: 6px;
+}
+.player .controller{
+	left: 10px;
+    position: relative;
+    top: 110px;
+    font-size: 22px;
+    color: #fff;
+}
+.controller .active{color:#A7EC21;}
+.controller i{cursor:pointer;}
+.controller i:hover{color:#A7EC21;}
+.player .musicbottom{
+	position: absolute;
+    background-color: #6A8B08;
+    height: 25px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    line-height: 28px;
+	border-bottom-right-radius:6px;
+}
+.musicbottom .volume{
+	width:50%;
+	height:100%;
+}
+.volume i{
+	display:block;
+    font-size: 16px;
+    float: left;
+    margin: 4px 6px auto 10px;
+}
+.volume .move{
+	width: 100px;
+    height: 6px;
+    float: left;
+    margin-top: 9px;
+    background: #fff;
+	border-radius: 3px;
+}
+.volume .move .volume-on{
+	width: 50%;
+    height: 6px;
+    float: left;
+    margin-top: 0px;
+    background: red;
+	border-radius: 3px;
+}
+.volume .move .drag{
+	width:14px;
+	height:14px;
+	position:absolute;
+	top:5px;
+	border-radius:50%;
+	background-color:#fff;
+	cursor:pointer;
+	left:75px;
+}
+.musicbottom .option{
+	width: 22%;
+    position: absolute;
+    height: 85%;
+    top: 0;
+    right: 0px;
+}
+.option .switch-btn{
+    width: 30px;
+    height: 15px;
+    border-radius: 10px;
+    border: 1px;
+    margin-top: 5px;
+	padding:0px;
+	outline:none;
+}
+.option .switch-btn:hover{
+	outline:none;
+}
+.switch-btn .off{
+    display: block;
+    width: 56%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #861712;
+    float: left;
+    margin-left: 0px;
+}
+.switch-btn .on{
+    display: block;
+    width: 56%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #861712;
+    float: right;
+    margin-left: 0px;
+}
+.option .list-icon{
+    display: block;
+    float: right;
+    margin-top: 4px;
+    margin-right: 10px;
+	cursor:pointer;
+}
+#music .player img{
+    width: 120px;
+    position: absolute;
+    height: 120px;
+    border-radius: 50%;
+    top: 20px;
+    left: 123px;
+    border: 4px solid #fff;
+	transform: rotate(360deg);
+	animation:mymove 3s linear infinite;/* 匀速     永久播放 */
+	-webkit-animation:mymove 10s linear infinite; /*Safari and Chrome*/
+}
+.player img:hover{
+	opacity:0.8;
+}
+/* 播放列表 */
+.music-list{
+	position:fixed;
+	width:370px;
+	height:300px;
+	opacity:0.8;
+	background-color:#666;
+	bottom:20px;
+	left:-378px;
+	border-radius:0 0 6px 0;
+	box-shadow:2px 1px 10px #111;
+	z-index:100;
+	overflow-x:hidden;
+}
+.music-list dl{width:388px;height:100%;overflow-y:scroll;}
+.music-list dl dd{
+	width:100%;
+	height:50px;
+	border-bottom:1px solid #333;
+	color:#fff;
+	line-height:50px;
+	cursor:pointer;
+}
+.music-list dl dd:last-of-type{border-bottom:0}
+.music-list dl dd:last-of-type:hover{border-bottom-right-radius:6px}
+.music-list dl dd:hover{
+	background-color:#ddd;
+}
+.music-list dl dd img{
+	width:40px;
+	height:40px;
+	vertical-align: middle;
+    margin: auto 10px;
+}
+.music-list .active{
+	background-color:#ccc;
+}
+/* 简写属性进行图片自动旋转 */
+@keyframes mymove
+{
+	from {transform: rotate(0deg);}
+	to {transform: rotate(360deg);}
+}
+
+@-webkit-keyframes mymove /*Safari and Chrome*/
+{
+from {transform: rotate(0deg);}
+	to {transform: rotate(360deg);}
+}
+.player .switch{
+	position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 56px;
+    left: 158px;
+    background-color: #443B42;
+    border-radius: 50%;
+	border:2px solid #529812;
+	text-align:center;
+	opacity:0.7;
+}
+.player .switch:hover{background-color:#333;opacity:1;}
+.switch i{
+    font-size: 29px;
+    margin-top: 7px;
+    color: #529812;
+    margin-left: 3px;
+	cursor:pointer;
+}
+#music .music-slide{
+	position: relative;
+    width: 9%;
+    height: 40%;
+    right: -9%;
+    float: right;
+    top: -76%;
+    background-color: #1C1C5F;
+	text-align:center;	
+	border-radius:0 5px 5px 0;
+	opacity:0.5;
+	box-shadow:2px 0px 3px #777;
+}
+.music-slide div{
+	display: block;
+    height: 100%;
+    color: #F3EFEF;
+    font-weight: 900;
+    line-height: 70px;
+    font-size: 25px;
+	cursor:pointer;
+	transition:transform,1s;
+	padding-left:10px;
+}
+.music-slide div:hover{
+	color:green;
+}
+.audio audio {
+	width:100%;
+}
+@media (min-width:767px) {
+	.audio {
+		display:none;
+	}	
+}

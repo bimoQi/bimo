@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css">
+<css href="__PUBLIC__/admin/css/public.css"/>
+<script src="__PUBLIC__/js/jquery.min.js"></script>
+<script src="__PUBLIC__/admin/js/album_index.js"></script>
+<script src="__PUBLIC__/admin/js/public.js"></script>
+</head>
+<body>
+<h4>相册列表：</h4>
+<div class="add">
+	<a href="__ROOT__/Admin/Album/add_album"><button type="button" class="btn btn-sm btn-info my-btn">添加相册</button></a>
+	<a href="__ROOT__/Admin/Album/add_photo"><button type="button" class="btn btn-sm btn-info my-btn">上传图片</button></a>
+</div>
+<div class="list">
+	<table>
+	<tr class="t-head">
+		<td>编号</td>
+		<td>名称</td>
+		<td>图片数量</td>
+		<td>浏览量</td>
+		<td>顶数</td>
+		<td>踩数</td>
+		<td>操作</td>
+	</tr>
+	<foreach name="list" item="arr">
+	<tr class="t-body">
+		<td>{$arr['id']}</td>
+		<td>{$arr['name']}</td>
+		<td>{$arr['photonum']}</td>
+		<td>{$arr['viewnum']}</td>
+		<td>{$arr['dingnum']}</td>
+		<td>{$arr['cainum']}</td>
+		<td>
+         	<a href="{:U('Album/edit_album',array('id'=>$arr['id']))}"><span title="编辑" class="glyphicon glyphicon-edit" style="color:#222"></span></a>
+         	<a title="{$arr.id}" class="del"><span title="删除" class="glyphicon glyphicon-trash" style="color:#222"></span></a>
+         </td>
+	</tr>
+	</foreach>
+	</table>
+	<div class="con-sub">
+		<div id="page" class="m-page">
+			<ul>
+				{$show}
+			</ul>
+		  	<p>共&nbsp;{$page_data.count}&nbsp;条记录&nbsp;&nbsp;<php>echo $_GET['p']?$_GET['p']:1;</php>/{$page_data.page_total}页</p>
+		</div>
+	</div>
+</div>
+
+<div class="add margin-top">
+	<a href="__ROOT__/Admin/Album/add_album"><button type="button" class="btn btn-sm btn-info my-btn">添加相册</button></a>
+	<a href="__ROOT__/Admin/Album/add_photo"><button type="button" class="btn btn-sm btn-info my-btn">上传图片</button></a>
+</div>
+</body>
+</html>

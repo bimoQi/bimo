@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css">
+<css href="__PUBLIC__/admin/css/public.css"/>
+<css href="__PUBLIC__/admin/css/add_album.css"/>
+</head>
+<body>
+<h4>添加相册：</h4>
+<div class="add">
+	<a href="__ROOT__/Admin/Album/index"><button type="button" class="btn btn-sm btn-info my-btn">返回</button></a>
+</div>
+
+<form action="{:U('Album/do_add_album')}" method="post">
+	添加相册*：<input type="text" name="album" value="{$album_name}" /><button type="submit" class="btn btn-sm sub-btn">添加</button>
+</form>
+<div class="info">{$error}</div>
+
+<div class="add margin-top">
+	<a href="__ROOT__/Admin/Album/index"><button type="button" class="btn btn-sm btn-info my-btn">返回</button></a>
+</div>
+</body>
+</html>

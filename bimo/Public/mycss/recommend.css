@@ -1,0 +1,67 @@
+@CHARSET "UTF-8";
+/* 推荐区 */
+#recommend{
+	display:inline-block;
+	*display:inline;
+	*zoom:1;
+	float:right;
+	height:400px;
+	margin-top:20px;
+}
+#recommend h3{
+	font-size:14px;
+	font-weight:bolder;
+	color:#333;
+	width:100%;
+	height:30px;
+	line-height:30px;
+	margin:0 0 8px 0;
+	padding:0 0 0 10px;
+	border-bottom:1px solid #C4C4FA;	
+}
+#recommend dd{
+	height:27px;
+	margin:3px 0 2px 0;
+	padding-left:30px;
+}
+#recommend dd.hot1{background:url(../img/hot1.png) no-repeat 4px 0;}
+#recommend dd.hot2{background:url(../img/hot2.png) no-repeat 4px 0;}
+#recommend dd.hot3{background:url(../img/hot3.png) no-repeat 4px 0;}
+#recommend dd.hot4{background:url(../img/hot4.png) no-repeat 4px 0;}
+#recommend dd.hot5{background:url(../img/hot5.png) no-repeat 4px 0;}
+#recommend dd.hot6{background:url(../img/hot6.png) no-repeat 4px 0;}
+#recommend dd.hot7{background:url(../img/hot7.png) no-repeat 4px 0;}
+#recommend dd a{color:#167F39;}
+#recommend dd a:hover{text-decoration:none;color:#ff9500}
+#recommend dd div{
+	text-indent:2em;
+	float:right;
+	margin:auto;
+}
+#recommend dd.hot-detail{
+	letter-spacing:2px;/*字体之间的空隙*/	
+	height:84px;
+	display:none;
+}
+#recommend .trans-img{
+	overflow:hidden;
+	background:red;
+	height:80px;
+}
+#recommend .trans-img img{
+	width:100px;
+	height:80px;
+	float:left;
+	transition:.4s;
+}
+#recommend .trans-img img:hover{
+	width:110px;
+	height:90px;
+	margin:-5px auto auto -5px;
+}
+#recommend h5{
+	color:#888;
+	padding:5px;
+	margin:0;
+	font-size:11px;
+}

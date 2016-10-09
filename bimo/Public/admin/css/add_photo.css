@@ -1,0 +1,59 @@
+@CHARSET "UTF-8";
+body { font:12px Arial, Verdana, Helvetica, sans-serif;}
+html, body {width:100%; height:100%;overflow:auto;}
+.add{
+	width:96%;
+	margin:10px auto auto auto;
+	height:43px;
+	background:#D3E3F5;
+	border-bottom:1px solid #ddd;
+	text-align:left;
+}
+.add .my-btn{
+	margin:5px auto auto 10px;
+	background:#fefefe;
+	color:#52A2F7;
+	font-weight:900;
+	border-radius:5px;
+}
+.add .my-btn:hover{
+	background:#52A2F7;
+	color:#fff;
+}
+form{
+	width:600px;
+	margin:20px auto auto 40px;
+	padding:0;
+}
+form .group{
+	height:40px;
+}
+form .group select{
+	height:30px;
+	width:70px;
+	border-radius:5px;
+	padding-left:8px;
+}
+form input[type=file]{
+	display:inline-block;
+}
+#describe{
+	height:30px;
+	width:170px;
+	border-radius:5px;
+	padding-left:8px;
+	border:1px solid #A9A9A9;
+}
+form .group .sub-btn{
+	margin:5px auto auto 0;
+	background:#333;
+	color:#fff;
+	font-weight:900;
+	border-radius:5px;
+}
+form .group .sub-btn:hover{background:#222;color:#fff;}
+.info{
+	width:96%;
+	margin:10px auto auto auto;
+	color:red;
+}

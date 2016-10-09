@@ -1,0 +1,33 @@
+<!-- 推荐区 -->
+<css href="__PUBLIC__/mycss/recommend.css"/>
+<div id="recommend" class="col-md-4 hidden-xs hidden-sm">
+	<div class="container-fluid">
+	<h3>博主推荐</h3>
+	<dl>
+	<php>
+		$time = count($recommend)<7?count($recommend):7;
+		for($i=0;$i<$time;$i++){
+		
+	</php>
+	<div class="container-fluid" style="padding:0">
+		<dd id="hot{$i+1}" class="hot{$i+1}"><a href="__ROOT__/Detail/index/id/{$recommend[$i]['id']}">{$recommend[$i]['title']}</a>
+			<div>
+				<php>for($j=0;$j < $recommend[$i]['recommendindex'];$j++){</php>
+				<img style="width:20px;height:20px;" src="__PUBLIC__/img/index4.png"/>
+				<php>}</php>
+			</div>
+		</dd>
+	</div>
+	<div class="container-fluid" style="padding:0">
+		<dd id="hot_detail{$i+1}" class="hot-detail">
+			<div class="container-fluid" style="padding:0">
+				<a class="trans-img col-xs-4"  style="padding:0" href="__ROOT__/Detail/index/id/{$recommend[$i]['id']}"><img src="{$recommend[$i]['imgpath']}"/></a>
+				<h5 class=" col-xs-8">{$recommend[$i]['content']|my_substr=0,50}</h5>
+			</div>
+		</dd>
+	</div>
+	<php>}</php>
+	</dl>
+	</div>
+</div>
+<js href="__PUBLIC__/js/recommend.js"/>

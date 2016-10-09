@@ -1,0 +1,94 @@
+﻿<extend name="Public/base"/>
+<block name="title">搜索 | 笔墨横姿，几令读者心目俱眩，一个别致的网站！</block>
+<block name="main">
+<css href="__PUBLIC__/mycss/article.css"/>
+<div class="container">
+	<div class="row">
+		<div class="col-md-8">
+		<h4 class="h4">以下显示您搜索的&nbsp;<font color="red">“{$search}”</font>&nbsp;相关文章</h4>
+		<foreach name="list" item="articles">
+				<div class="article-head">
+					<div class="container-fluid" style="padding:0">
+						<div class="picture col-xxs-5 col-xs-4 col-sm-3">
+							<php>if(!$articles['imgpath']){</php>
+							<div class="pic"><a href="__ROOT__/Detail/index/id/{$articles.id}.html"><img src="__PUBLIC__/img/no_pic.png"/></a></div>
+							<php>}else{</php>
+							<div class="pic"><a href="__ROOT__/Detail/index/id/{$articles.id}.html"><img src="{$articles.imgpath}"/></a></div>
+							<php>}</php>
+						</div>
+						<div class="content col-xxs-7 col-xs-8 col-sm-9">
+							<h3 class="text-overflow">{$articles.title|mb_substr=0,30,'UTF-8'}</h3>
+							<div class="detail hidden-xs">
+							{$articles.content|my_substr=0,100,'UTF-8'}
+							</div>
+							<div class="author">
+								<p><span class="glyphicon glyphicon-user"></span>&nbsp;{$articles.author} &nbsp;&nbsp;<span class="glyphicon glyphicon-time"></span>&nbsp; {$articles.posttime|date="Y-m-d",###} &nbsp; <span class="glyphicon glyphicon-eye-open"></span>&nbsp;{$articles.viewnum}&nbsp;&nbsp; <span class="glyphicon glyphicon glyphicon-cloud"></span>&nbsp;{$articles.comment_count}</p>
+							</div>
+						</div>
+					</div>
+					<div class="container-fluid" style="padding:0">
+						<div class="tag">
+								<ul>
+								<php>if($articles['tags'][0]){</php>
+									<li class="tag1"><a href="__ROOT__/Search/index/info/{$articles['tags'][0]}">{$articles['tags'][0]}</a></li>
+									<for start="1" end="count($articles['tags'])">
+									<li><a href="__ROOT__/Search/index/info/{$articles['tags'][$i]}">{$articles['tags'][$i]}</a></li>
+									</for>
+								<php>}</php>
+								</ul>
+								<a class="button" href="__ROOT__/Detail/index/id/{$articles.id}.html"><span>阅读全文</span></a>
+						</div>
+					</div>
+				</div>
+		
+		</foreach>
+		<div class="row">
+			<div id="page" class="m-page hidden-xs">
+			  <ul>
+			    {$show}
+			  </ul>
+			  <p>共&nbsp;{$page_data.count}&nbsp;条记录&nbsp;&nbsp;<php>echo $_GET['p']?$_GET['p']:1;</php>/{$page_data.page_total}页</p>
+			</div>
+			<div class="visible-xs">
+				<div class="container" style="text-align:center;margin-bottom:10px">
+					<a id="prev"  class="btn btn-xs btn-primary pull-left">上一页</a>
+					<em>共&nbsp;{$page_data.count}&nbsp;条记录&nbsp;&nbsp;<php>echo $_GET['p']?$_GET['p']:1;</php>/<i>{$page_data.page_total}</i>页</em>
+					<a id="next" href="#" class="btn btn-xs btn-primary pull-right">下一页</a>
+				</div>
+			</div>
+			<script>
+				var url = location.href;
+				var num = url.indexOf("/p/");
+				if(num>0){
+					var url_head = url.substring(0,num+3);
+					var str1 = url.substring(num+3);
+					var str2 = str1.substring(0,str1.indexOf("."));
+					var prev_page = parseInt(str2)-1;
+					var next_page = parseInt(str2)+1;
+					var prev = url_head+""+prev_page+".html";
+					var next = url_head+""+next_page+".html";
+					if(prev_page <= 0){
+						$("#prev").remove();
+					}
+					if(next_page >= parseInt($("em i").html())){
+						$("#next").remove();
+					}
+					$("#prev").attr("href",prev);
+					$("#next").attr("href",next);
+				}else{
+					$("#prev").remove();
+					var next = location.href+"/p/2.html";
+					$("#next").attr("href",next);
+					if(1 == parseInt($("em i").html())){
+						$("#next").remove();
+					}
+				}
+			</script>
+		</div>
+		</div>
+		<!-- 加载博主推荐栏目  -->
+		<include file="Public/recommend"/>
+	</div>
+</div>
+<js href="__PUBLIC__/js/article.js"/>
+</block>

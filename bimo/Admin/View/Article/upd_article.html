@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css">
+<css href="__PUBLIC__/admin/css/add_article.css"/>
+<script src="__PUBLIC__/js/jquery.min.js"></script>
+<script src="__PUBLIC__/js/bootstrap.min.js"></script>
+<js href="__PUBLIC__/js/ckeditor/ckeditor.js"/>
+<body>
+<h4>修改文章：</h4>
+<div class="add"><a href="{:U('Article/show_article')}"><button type="button" class="btn btn-sm btn-info my-btn">返回</button></a></div>
+<form class="form-horizontal" name="myform" action="__ROOT__/Admin/Article/upd_article" enctype='multipart/form-data' method="post" role="form">
+		<input type="hidden" value="{$art.id}" name="artid"/>
+		<div class="form-group">
+			<label for="title" class="col-xs-2 control-label">标题：</label>
+			<div class="col-xs-10">
+			 <input type="text" name="title" class="form-control" id="title" 
+			   value="{$art.title}" placeholder="请输入标题">
+			</div>
+   		</div>
+   		<div class="form-group">
+			<label for="author" class="col-xs-2 control-label">作者：</label>
+			<div class="col-xs-10">
+			 <input type="text" name="author" class="form-control" id="author" 
+			   value="{$art.author}" placeholder="请输入作者">
+			</div>
+   		</div>
+   		<div class="form-group align-left" >
+			<label for="tags" class="col-xs-2 control-label">标签：</label>
+			<div class="col-xs-10">
+			 <input type="text" style="display:inline-block" name="tags" class="form-control" id="tags"
+			   value="{$art.tags}" placeholder="请输入标签">
+			 <label style="display:inline-block;color:red;" >(*多个标签以 | 隔开)</label>
+			</div>
+   		</div>
+   		<div class="form-group">
+			<label class="col-xs-2 control-label">区块：</label>
+			<select id="articlearea" name="articlearea" class="form-control select-inline">
+				<option value="{$art.articlearea}">{$art.articlearea}</option>
+				<php>if($art['articlearea']!="动漫"){</php>
+				<option value="动漫">动漫</option>
+				<php>}</php>
+				<php>if($art['articlearea']!="技术"){</php>
+				<option value="技术">技术</option>
+				<php>}</php>
+				<php>if($art['articlearea']!="生活"){</php>
+				<option value="生活">生活</option>
+				<php>}</php>
+				<php>if($art['articlearea']!="其他"){</php>
+				<option value="其他">其他</option>
+				<php>}</php>
+			</select>
+			<select id="articletype" name="articletype" class="form-control select-inline">
+				<option value="{$art.articletype}">{$art.articletype}</option>
+			</select>
+	    </div>
+	    <div class="form-group align-left">
+			<label class="col-xs-2 control-label">推荐：</label>
+			<div class="col-xs-10">
+				<php> if($art['isrecommend']==1){</php>
+					<label class="radio-inline" >	 
+						<input name="isrecommend" value="1" type="radio" checked>是
+					</label>
+					<label class="radio-inline">
+						<input  name="isrecommend" value="0" type="radio"/>否
+					</label>
+					<label class="radio-inline">
+						推荐指数：<input type="text" name="recommendindex" readonly="readonly" value="{$art['recommendindex']}" class="rec-index" />
+					</label>
+				<php>}else{</php>
+					<label class="radio-inline" >	 
+						<input name="isrecommend" value="1" type="radio">是
+					</label>
+					<label class="radio-inline">
+						<input  name="isrecommend" value="0" type="radio"  checked/>否
+					</label>
+					<label class="radio-inline">
+						推荐指数：<input type="text" name="recommendindex" readonly="readonly" value="0" class="rec-index" />
+					</label>
+				<php>}</php>
+			 </div>
+		</div>
+		<div class="form-group">
+		    <label for="photo" class="col-xs-2 control-label photo">  图片预览（可不选）：</label>
+		      <input type="file" name="photo" style="margin:10px auto auto 5px;" id="photo"/>
+		      <input name="filePath" type="hidden" id="filePath" onclick="upload_pic(this)"/>
+		</div>
+		<div class="form-group">
+		    <textarea name="content" id="myEditor">{$art.content}</textarea>
+		</div>
+		<div class="form-group">
+			<button  type="submit" name="submit" id="submit" class="btn  btn-primary m-submit">发布</button>
+		</div>
+	</form>	
+<div class="add margin-top"><a href="{:U('Article/show_article')}"><button type="button" class="btn btn-sm btn-info my-btn">返回</button></a></div>
+<script type="text/javascript">
+	CKEDITOR.replace( 'myEditor',
+	{
+	});
+</script>
+</body>
+<js href="__PUBLIC__/admin/js/upd_article.js"/>
+</html>

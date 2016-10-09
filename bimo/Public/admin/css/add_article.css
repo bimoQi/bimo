@@ -1,0 +1,72 @@
+@CHARSET "UTF-8";
+body { font:12px Arial, Verdana, Helvetica, sans-serif; color:#333;}
+html, body {width:100%; height:100%;overflow:auto;}
+h4{
+	width : 96%;
+	margin : 10px auto auto auto;
+	font-weight:bolder;
+	font-size:15px;
+}
+.add{
+	width:96%;
+	margin:10px auto auto auto;
+	height:43px;
+	background:#D3E3F5;
+	border-bottom:1px solid #ddd;
+	text-align:left;
+}
+form{
+	width:600px;
+	margin:20px auto auto 100px;
+}
+.form-group{
+	margin-top:5px;
+	margin-bottom:5px;
+}
+.form-group input{
+	width:180px;
+}
+.form-group select{
+	width:85px;
+}
+.form-group .select-inline{float:left;margin-left:15px}
+.align-left{
+	text-align:left;
+}
+.form-group .my-area{
+	width:80%;
+}
+.form-group textarea{
+	display:inline-block;
+	width:300px;
+	height:200px;
+}
+.form-group .my-area .add-other{
+	display:inline-block;
+}
+.my-area .add-other a{
+	display:block;
+	margin:10px auto;
+}
+.m-submit{
+	display:inline-block;
+	margin-left:30%;
+}
+.modal-body textarea{
+	width:100%;
+	min-height:400px;
+}
+.my-btn {
+	margin: 5px auto auto 10px;
+}
+.radio-inline input[type="radio"] {
+	width:30px;
+	margin-left: -24px;
+	margin-top: 1px;
+}
+.radio-inline input[type="text"] {
+	width:20px;
+	text-align:center;
+	border-radius: 3px;
+	border:1px solid #ddd;
+}

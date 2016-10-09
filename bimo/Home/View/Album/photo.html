@@ -1,0 +1,79 @@
+<extend name="Public/base"/>
+<block name="title">相册 | 笔墨横姿，几令读者心目俱眩，一个别致的网站！</block>
+<block name="main">
+<css href="__PUBLIC__/mycss/photo.css"/>
+<css href="__PUBLIC__/js/highslide/highslide/highslide.css"/>
+<script type="text/javascript" src="__PUBLIC__/js/highslide/highslide/highslide-with-gallery.js"></script>
+<js href="__PUBLIC__/js/photo.js"/>
+	<div class="container">
+		<div class="photo">
+			<h3>相册----<span style="color:red;">{$album_name}</span></h3>
+			<div class="container-fluid padding-none">
+				<div class="highslide-gallery">
+					<foreach name="list" item="list">
+						<div class="m-group">
+							<dl>
+								<dt>
+									<a href="{$list['imgpath']}" class="highslide" onclick="return hs.expand(this)">
+										<img src="{$list['imgpath']}" alt="图片" title="点击放大" />
+									</a>
+								</dt>
+								<div class="highslide-caption">
+									{$list['describe']}
+								</div>
+								<dd class="detail">{$list['describe']}</dd>
+								<dd>{$list['posttime']|date="y年m月d日",###}</dd>
+							</dl>
+						</div>
+					</foreach>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container" style="text-align:center">
+		<div id="page" class="m-page hidden-xs">
+			<ul>
+				{$show}
+			</ul>
+		  	<p>共&nbsp;{$page_data.count}&nbsp;张图片&nbsp;&nbsp;<php>echo $_GET['p']?$_GET['p']:1;</php>/{$page_data.page_total}页</p>
+		</div>
+		<div class="visible-xs">
+			<div class="container" style="text-align:center;margin-bottom:10px">
+				<a id="prev"  class="btn btn-xs btn-primary pull-left">上一页</a>
+				<em>共&nbsp;{$page_data.count}&nbsp;条记录&nbsp;&nbsp;<php>echo $_GET['p']?$_GET['p']:1;</php>/<i>{$page_data.page_total}</i>页</em>
+				<a id="next" href="#" class="btn btn-xs btn-primary pull-right">下一页</a>
+			</div>
+		</div>
+		<script>
+				var url = location.href;
+				var num = url.indexOf("/p/");
+				if(num>0){
+					var url_head = url.substring(0,num+3);
+					var str1 = url.substring(num+3);
+					var str2 = str1.substring(0,str1.indexOf("."));
+					var prev_page = parseInt(str2)-1;
+					alert(prev_page)
+					var next_page = parseInt(str2)+1;
+					var prev = url_head+""+prev_page+".html";
+					var next = url_head+""+next_page+".html";
+					if(prev_page <= 0){
+						$("#prev").remove();
+					}
+					if(next_page-1 >= parseInt($("em i").html())){
+						$("#next").remove();
+					}
+					$("#prev").attr("href",prev);
+					$("#next").attr("href",next);
+				}else{
+					$("#prev").remove();
+					var num = url.indexOf("/id/");
+					var url_head = url.substring(0,num+5);
+					var next = url_head+"/p/2.html";
+					$("#next").attr("href",next);
+					if(1 == parseInt($("em i").html())){
+						$("#next").remove();
+					}
+				}
+		</script>
+	</div>
+</block>

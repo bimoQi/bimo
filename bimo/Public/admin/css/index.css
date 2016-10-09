@@ -1,0 +1,140 @@
+@CHARSET "UTF-8";
+@font-face{
+	font-family:清茶楷体;
+	src:url('../../fonts/my.ttf');
+}
+@font-face{
+	font-family:微软简魏碑;
+	src:url('../../fonts/微软简魏碑.ttf');
+}
+body{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	overflow: hidden;
+	height: 100%;
+	width:1100px;
+}
+#header{
+	position:absolute;
+	top: 0;
+	left: 0;
+	height: 100px;
+	width: 100%;
+	overflow: hidden;
+	background-color: #234686;
+	font-family:清茶楷体;	
+}
+#header h1{
+	margin:0;padding:0;
+	display:block;
+	float:left;
+	color:#fff;
+	height:100px;line-height:100px;
+	text-shadow:2px 2px 3px #333,3px 3px 4px red;
+	font-size:40px;	
+}
+.head-info{
+	display:block;
+	min-width:5	00px;
+	float:right;
+	height:100px;
+	line-height:170px;
+	vertical-align:bottom;
+}
+.head-info .admin{
+	display:inline-block;
+	float:left;
+	width:60px;
+	margin:auto 10px 20px auto;
+	padding-left:30px;
+	background:url(../img/admin_icon.png) no-repeat 0;
+	background-size:17%;
+}
+.head-info .logout{
+	display:inline-block;
+	float:left;
+	width:60px;
+	margin:auto 10px 20px auto;
+	padding-left:27px;
+	background:url(../img/logout.png) no-repeat 0;
+	background-size:17%;
+}
+.head-info a{
+	color:#D82C2C;
+	font-size:16px;	
+	text-decoration:none;
+}
+.head-info #time{
+	display:inline-block;
+	float:left;
+	color:#fff;
+	margin:auto 20px 10px auto;
+	background:url(../img/time.png) no-repeat 0;
+	background-size:12%;
+	padding-left:30px;
+}
+#menu{
+	position: fixed;
+	top: 100px;
+	left: 0;
+	height: 100%;
+	width: 150px;
+	overflow: hidden;
+	vertical-align: top;
+	background: #E1E7F5;
+}
+#menu dl{
+	padding: 0;
+	margin: 0;
+	width: 100%;
+}
+#menu dt{
+	background: #B5D6F9;
+	height: 50px;
+	text-align:center;
+	font-size:22px;
+	line-height:40px;
+	font-weight:bolder;
+	color:#fff;
+	padding-top:10px;
+}
+#menu dt div{
+	margin:auto;
+	width:80%;
+	background:#3399FE;
+	border-radius:10px;
+}
+#menu dd{
+	background: #DEE4ED;
+	height: 30px;
+	width:150px;
+	margin-left:0;
+	text-align:center;
+}
+#menu a{
+	display: block;
+	text-decoration: none;
+	height: 100%;
+	line-height: 30px;
+	width: 100%;
+	color: #234686;
+	text-indent: 5px;
+	border-width: 0 1px 1px 0;
+	font-size:12px;
+}
+#menu a:hover{
+	text-decoration: underline;
+}
+
+
+#maincontent{
+	position: fixed;
+	left: 150px;
+	top: 100px;
+	right: 0;
+	bottom: 0;
+	overflow:auto;
+	border-top: solid 2px #70cbea;
+	border-left: solid 2px #fff;
+}

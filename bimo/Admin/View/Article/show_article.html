@@ -1,0 +1,63 @@
+		{:C('SHOW_PAGE_TRACE',true)}<!-- 每次加载页面都显示 页面trace -->
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Bootstrap 实例 - 上下文类</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css"/>
+	<css href="__PUBLIC__/admin/css/public.css"/>
+	<script src="__PUBLIC__/js/jquery.min.js"></script>
+	<script src="__PUBLIC__/admin/js/public.js"></script>
+	<js href="__PUBLIC__/admin/js/show_article.js"/>
+<style>
+</style>
+</head>
+<body>
+<h4>文章列表：</h4>
+<div class="add"><a href="__ROOT__/Admin/article/add_article"><button type="button" class="btn btn-sm btn-info my-btn">添加文章</button></a>{$success}</div>
+<div class="list">
+	<table>
+	    <tr class="t-head">
+	         <th style="width:200px">标题</th>
+	         <th>作者</th>
+	         <th>标签</th>
+	         <th>是否推荐</th>
+	         <th style="width:200px">内容</th>
+	         <th>发表时间</th>
+	         <th>阅读量</th>
+	         <th>评论量</th>
+	         <th>文章分区</th>
+	         <th>文章类型</th>
+	         <th style="width:100px">操作</th>
+	    </tr>
+	   	<foreach name="list" item="arr" key="k">
+	    <tr class="t-body">
+	         <td class="color-red">{$arr.title}</td>
+	         <td>{$arr.author}</td>
+	         <td>{$arr.tags}</td>
+	         <td>{$arr.isrecommend}</td>
+	         <td>{$arr.content|my_substr=0,18}</td>
+	         <td>{$arr.posttime|date="Y-m-d H:i:s",###}</td>
+	         <td>{$arr.viewnum}</td>
+	         <td>{$arr.comment_count}</td>
+	         <td>{$arr.articlearea}</td>
+	         <td>{$arr.articletype}</td>
+	         <td>
+	         	<a href="{:U('Article/upd_article',array('id'=>$arr['id']))}"><span title="编辑" class="glyphicon glyphicon-edit" style="color:#222"></span></a>
+	         	<a title="{$arr.id}" class="del"><span title="删除" class="glyphicon glyphicon-trash" style="color:#222"></span></a>
+	         </td>
+	    </tr>
+	      </foreach>
+	</table>
+</div>
+<div class="con-sub">
+	<div id="page" class="m-page">
+		<ul>
+			{$show}
+		</ul>
+		 	<p>共&nbsp;{$page_data.count}&nbsp;条记录&nbsp;&nbsp;<php>echo $_GET['p']?$_GET['p']:1;</php>/{$page_data.page_total}页</p>
+	</div>
+</div>
+<div class="add margin-top"><a href="__ROOT__/Admin/article/add_article"><button type="button" class="btn btn-sm btn-info my-btn">添加文章</button></a>{$success}</div>
+</body>
+</html>

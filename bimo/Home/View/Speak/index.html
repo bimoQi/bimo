@@ -1,0 +1,38 @@
+<extend name="Public/base"/>
+<block name="title">微语 | 笔墨横姿，几令读者心目俱眩，一个别致的网站！</block>
+<block name="main">
+<css href="__PUBLIC__/mycss/speak.css"/>
+<js href="__PUBLIC__/js/speak.js"/>
+<div class="container">
+	<div class="main">
+		<h3>微语（<span style="color:#ff9500">共{$count}个</span>）</h3>
+		<div class="container-fluid padding-none">
+			<ul id="speak">
+				<foreach name="arr" item="arr">
+					<li class="li" id="{$arr.id}">
+						<div class="calendar-year"><span>{$arr.posttime|date="Y",###}</span></div>
+						<div class="calendar-sub">
+							<div class="calendar-month">{$arr.posttime|date="n",###}</div>
+							<div class="calendar-day">{$arr.posttime|date="d",###}</div>
+						</div>
+						<div class="head">
+							<img src="{$arr.head}"/>
+						</div>
+						<div class="line"></div>
+						<div class="content" >
+							<div class="detail">
+								<div class="p">{$arr.content}</div>
+								<div class="chuli">
+									<span class="glyphicon glyphicon-thumbs-up ding" style="color: rgb(255, 140, 60);">顶({$arr.dingnum})</span>
+									<span class="glyphicon glyphicon-thumbs-down cai" style="color: rgb(148, 130, 70);">踩({$arr.cainum})</span>
+								</div>
+							</div>
+						</div>
+					</li>
+				</foreach>
+			</ul>
+			<button class="btn btn-block m-btn" onclick="load(this)">点击加载更多</button>
+		</div>
+	</div>
+</div>
+</block>
