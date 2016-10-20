@@ -1,0 +1,46 @@
+[ 2016-10-19T10:29:56+08:00 ] ::1 /bimo/
+ERR: 1146:Table 'bimo.t_client_ip' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `t_client_ip`
+ERR: 1146:Table 'bimo.t_client_ip' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `t_client_ip`
+
+[ 2016-10-19T10:30:37+08:00 ] ::1 /bimo/
+ERR: 1146:Table 'bimo.t_client_ip' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `t_client_ip`
+
+[ 2016-10-19T11:08:17+08:00 ] ::1 /bimo/Public/js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2016-10-19T11:08:18+08:00 ] ::1 /bimo/Public/mycss/carousel/slick.min.css.map
+ERR: 无法加载控制器:Public
+
+[ 2016-10-19T11:08:18+08:00 ] ::1 /bimo/Public/mycss/carousel/slick-theme.min.css.map
+ERR: 无法加载控制器:Public
+
+[ 2016-10-19T11:11:00+08:00 ] ::1 /bimo/Public/js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2016-10-19T11:11:01+08:00 ] ::1 /bimo/Public/mycss/carousel/slick.min.css.map
+ERR: 无法加载控制器:Public
+
+[ 2016-10-19T11:11:01+08:00 ] ::1 /bimo/Public/mycss/carousel/slick-theme.min.css.map
+ERR: 无法加载控制器:Public
+
+[ 2016-10-19T11:14:09+08:00 ] ::1 /bimo/Public/js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2016-10-19T11:14:10+08:00 ] ::1 /bimo/Public/mycss/carousel/slick.min.css.map
+ERR: 无法加载控制器:Public
+
+[ 2016-10-19T11:14:10+08:00 ] ::1 /bimo/Public/mycss/carousel/slick-theme.min.css.map
+ERR: 无法加载控制器:Public
+
+[ 2016-10-19T11:14:16+08:00 ] ::1 /bimo/Public/js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2016-10-19T11:14:24+08:00 ] ::1 /bimo/Public/js/jquery.min.map
+ERR: 无法加载控制器:Public
+
+[ 2016-10-19T11:14:56+08:00 ] ::1 /bimo/Public/js/jquery.min.map
+ERR: 无法加载控制器:Public
+

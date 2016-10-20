@@ -1,7 +1,7 @@
 <?php
 return array(
 	//'配置项'=>'配置值'
-	'SHOW_PAGE_TRACE' => false,	//在页面显示trace信息
+	'SHOW_PAGE_TRACE' => true,	//在页面显示trace信息
 	'ULR_MODLE'	=> 2,//pathinfo模式
 	'MODULE_ALLOW_LIST'		=>	array('Home','Admin','Common'),	//设置允许被访问的模块
 	'DEFAULT_MODULT'		=>	'Home',		//设置默认路由模块  可以不写 本身默认就是Home

@@ -13,6 +13,4 @@ onload=function(){
 			obj.style.filter="progid:DXImageTransform.Microsoft.Alpha(opacity=90)";
 		}
 	}
-	
-	
 }

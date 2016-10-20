@@ -3,6 +3,12 @@ namespace Home\Controller;
 use Think\Controller;
 class IndexController extends Controller {
     public function index(){
+        $ip_data['ip_addr'] = get_client_ip();
+        if($ip_data['ip_addr'] !='117.34.28.13' && $ip_data['ip_addr']!='117.34.28.15' && $ip_data['ip_addr']!='117.27.149.15' && $ip_data['ip_addr']!='117.27.149.14' && $ip_data['ip_addr']!='183.61.236.14'  && $ip_data['ip_addr']!='69.58.178.56'){
+            $ip_data['name'] = get_ip_addr($ip_data['ip_addr'])['addr'];
+            $ip_data['time'] = date("Y-m-d H:i:s", time());
+            M('client_ip')->data($ip_data)->add();
+        }
     	$article = M("article");
     	//删选动漫（推荐）
     	$techno = array();

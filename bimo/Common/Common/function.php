@@ -92,6 +92,13 @@ function get_mac_addr($os_type){
 	}
 	return $mac_addr[0];
 }
+
+function get_ip_addr($ip) {
+	$json = @file_get_contents("http://whois.pconline.com.cn/ipJson.jsp?ip={$ip}");
+	$json = iconv('gbk','utf-8',$json);
+	$json = substr($json,40,-10);
+	return json_decode($json,true);
+}
 function isMobile(){
     // 如果有HTTP_X_WAP_PROFILE则一定是移动设备
     if (isset ($_SERVER['HTTP_X_WAP_PROFILE']))

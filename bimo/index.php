@@ -1,3 +1,3 @@
 <?php
-define("APP_DEBUG",false);
+define("APP_DEBUG",true);
 include 'Public/ThinkPHP/ThinkPHP.php';

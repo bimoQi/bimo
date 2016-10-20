@@ -6,7 +6,7 @@
 			'position':'fixed',//'absolute', 
 			'top':'-50px', 
 			'z-index':'1000' 
-		}).attr('src','/Public/img/snow.png'); 
+		}).attr('src','/bimo/Public/img/snow.png'); 
 		var documentHeight=document.documentElement.clientHeight;//$(document).height(); 
 		var documentWidth=$(document).width(); 
 		var defaults={minSize:10,maxSize:20,newOn:500,flakeColor:"#FFFFFF"}; 
