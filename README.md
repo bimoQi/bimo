@@ -7,3 +7,12 @@
 * 后台地址为 `http://www.domain.com/Admin/index/login` 账号密码 `admin` `admin`
 
 ## 图片展示
+
+
+![首页](images/demo1.jpg)
+![文章列表](images/demo2.jpg)
+![文章内容](images/demo3.jpg)
+![相册](images/demo4.jpg)
+![微语](images/demo5.jpg)
+![留言](images/demo6.jpg)
+![后台管理](images/demo7.jpg)
