@@ -473,4 +473,4 @@ CREATE TABLE `t_user` (
 -- ----------------------------
 -- Records of t_user
 -- ----------------------------
-INSERT INTO `t_user` VALUES ('1', 'admin', '超级管理员', '233ce7a53d132eb6fc5ab698a90f3262f1b1cfd2', '1303445410@qq.com', '/Public/admin/img/super_admin.png', '/Uploads/user/head.png');
+INSERT INTO `t_user` VALUES ('1', 'admin', '超级管理员', '90b9aa7e25f80cf4f64e990b78a9fc5ebd6cecad', '1303445410@qq.com', '/Public/admin/img/super_admin.png', '/Uploads/user/head.png');
